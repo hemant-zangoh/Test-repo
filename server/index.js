@@ -35,8 +35,25 @@ app.use('/api', limiter);
 app.use('/api/auth', authLimiter, authRoutes);
 
 // Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+app.get('/health', async (req, res) => {
+  try {
+    // Check database connection
+    const dbCheck = await require('./utils/database').pool.query('SELECT 1');
+    
+    res.json({ 
+      status: 'OK',
+      timestamp: new Date().toISOString(),
+      environment: process.env.NODE_ENV || 'development',
+      database: dbCheck ? 'connected' : 'disconnected',
+      version: require('../package.json').version
+    });
+  } catch (error) {
+    res.status(503).json({
+      status: 'ERROR',
+      timestamp: new Date().toISOString(),
+      error: 'Database connection failed'
+    });
+  }
 });
 
 // Error handling

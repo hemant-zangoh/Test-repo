@@ -177,7 +177,7 @@ router.post('/reset-password', [
 });
 
 // Logout endpoint (mainly for token blacklisting if implemented)
-router.post('/logout', authenticate, (req, res) => {
+router.post('/logout', authenticate, (_, res) => {
   // In a production app, you might want to blacklist the token here
   res.json({ message: 'Logout successful' });
 });
