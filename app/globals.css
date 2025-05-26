@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-200 text-black font-switzer;
+  }
+  
+  * {
+    @apply font-switzer;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-xl font-normal text-gray-700;
+  }
+  
+  .status-badge {
+    @apply px-3.5 py-0.5 rounded-[10px] text-base;
+  }
+  
+  .filter-green {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(37%) saturate(542%) hue-rotate(71deg) brightness(95%) contrast(86%);
+  }
+  
+  .filter-red {
+    filter: brightness(0) saturate(100%) invert(35%) sepia(71%) saturate(439%) hue-rotate(314deg) brightness(95%) contrast(92%);
+  }
+}

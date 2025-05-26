@@ -1,43 +1,27 @@
 {
-  "name": "test-repo",
-  "version": "1.0.0",
-  "description": "User authentication system",
-  "main": "server/index.js",
+  "name": "customer-service-dashboard",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js",
-    "client": "cd client && npm start",
-    "server": "nodemon server/index.js",
-    "dev:full": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": ["authentication", "jwt", "express", "react"],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2",
-    "dotenv": "^16.3.1",
-    "cors": "^2.8.5",
-    "express-rate-limit": "^7.1.5",
-    "nodemailer": "^6.9.7",
-    "pg": "^8.11.3",
-    "express-validator": "^7.0.1"
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2",
-    "jest": "^29.7.0",
-    "supertest": "^6.3.3",
-    "eslint": "^8.55.0",
-    "typescript": "^5.3.3",
-    "concurrently": "^8.2.2",
-    "@types/node": "^20.10.5",
-    "@types/express": "^4.17.21",
-    "@types/bcryptjs": "^2.4.6",
-    "@types/jsonwebtoken": "^9.0.5"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
